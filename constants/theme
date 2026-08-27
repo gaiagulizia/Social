@@ -1,0 +1,44 @@
+// Tema grafico dell'app: bianco, minimal, tipico dei social più diffusi
+// (Instagram / Threads / X). Usiamo il font di sistema (San Francisco su iOS,
+// Roboto su Android) perché è quello che i social più famosi utilizzano
+// per garantire leggibilità nativa su ogni dispositivo.
+
+import { Platform } from "react-native";
+
+export const colors = {
+  background: "#FFFFFF",
+  surface: "#FAFAFA",
+  border: "#EFEFEF",
+  text: "#0A0A0A",
+  textSecondary: "#8E8E8E",
+  placeholder: "#C7C7C7",
+  accent: "#0095F6", // blu tipico dei CTA social, usato con parsimonia
+  danger: "#ED4956",
+  overlay: "rgba(0,0,0,0.5)",
+  white: "#FFFFFF",
+  black: "#000000",
+};
+
+export const fonts = {
+  regular: Platform.select({ ios: "System", android: "sans-serif", default: "System" }),
+  medium: Platform.select({ ios: "System", android: "sans-serif-medium", default: "System" }),
+  semibold: Platform.select({ ios: "System", android: "sans-serif-medium", default: "System" }),
+  bold: Platform.select({ ios: "System", android: "sans-serif-bold", default: "System" }),
+};
+
+export const radius = {
+  sm: 8,
+  md: 14,
+  lg: 20,
+  pill: 999, // per i tag delle sezioni, molto smussati
+};
+
+export const spacing = {
+  xs: 4,
+  sm: 8,
+  md: 16,
+  lg: 24,
+  xl: 32,
+};
+
+export default { colors, fonts, radius, spacing };
