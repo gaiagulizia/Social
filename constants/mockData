@@ -1,0 +1,95 @@
+import { Post, ProfileSection, UserProfile, Conversation } from "@/types";
+
+export const currentUser: UserProfile = {
+  id: "me",
+  username: "tuo_username",
+  displayName: "Il Tuo Nome",
+  avatarUri: "https://i.pravatar.cc/300?img=12",
+  bio: "Scrivi qui la tua descrizione (max 300 caratteri). Racconta chi sei e cosa condividi su questo profilo.",
+  followers: 128,
+  following: 97,
+  sections: [
+    { id: "s1", name: "In evidenza", tagTextColor: "#FFFFFF", tagBgColor: "#0095F6", order: 0 },
+    { id: "s2", name: "Viaggi", tagTextColor: "#FFFFFF", tagBgColor: "#12B76A", order: 1 },
+    { id: "s3", name: "Lavoro", tagTextColor: "#000000", tagBgColor: "#FFD466", order: 2 },
+  ],
+};
+
+export const initialPosts: Post[] = [
+  {
+    id: "p1",
+    authorId: "me",
+    type: "text",
+    content: "Primo post di prova su questo social 🚀",
+    sectionId: "s1",
+    createdAt: Date.now() - 1000 * 60 * 60 * 5,
+    likes: 12,
+    liked: false,
+    comments: 2,
+    archived: false,
+  },
+  {
+    id: "p2",
+    authorId: "me",
+    type: "image",
+    content: "Un tramonto pazzesco ieri sera",
+    mediaUri: "https://picsum.photos/seed/sunset/800/800",
+    sectionId: "s2",
+    createdAt: Date.now() - 1000 * 60 * 60 * 24,
+    likes: 45,
+    liked: true,
+    comments: 5,
+    archived: false,
+  },
+];
+
+export const feedPosts = [
+  {
+    id: "f1",
+    authorName: "giulia.rossi",
+    authorAvatar: "https://i.pravatar.cc/300?img=5",
+    type: "image" as const,
+    content: "Weekend in montagna 🏔️",
+    mediaUri: "https://picsum.photos/seed/mountain/800/800",
+    createdAt: Date.now() - 1000 * 60 * 30,
+    likes: 231,
+    liked: false,
+    comments: 14,
+  },
+  {
+    id: "f2",
+    authorName: "marco.dev",
+    authorAvatar: "https://i.pravatar.cc/300?img=8",
+    type: "text" as const,
+    content: "Sto imparando React Native e devo dire che mi sta piacendo molto!",
+    createdAt: Date.now() - 1000 * 60 * 90,
+    likes: 58,
+    liked: true,
+    comments: 9,
+  },
+];
+
+export const conversations: Conversation[] = [
+  {
+    id: "c1",
+    participantName: "giulia.rossi",
+    participantAvatar: "https://i.pravatar.cc/300?img=5",
+    lastMessage: "Ci vediamo domani!",
+    lastMessageAt: Date.now() - 1000 * 60 * 12,
+    unread: true,
+  },
+  {
+    id: "c2",
+    participantName: "marco.dev",
+    participantAvatar: "https://i.pravatar.cc/300?img=8",
+    lastMessage: "Top, grazie mille",
+    lastMessageAt: Date.now() - 1000 * 60 * 60 * 3,
+    unread: false,
+  },
+];
+
+export const suggestedUsers = [
+  { id: "u1", username: "chiara.ph", avatar: "https://i.pravatar.cc/300?img=9" },
+  { id: "u2", username: "luca_travels", avatar: "https://i.pravatar.cc/300?img=15" },
+  { id: "u3", username: "sara.food", avatar: "https://i.pravatar.cc/300?img=20" },
+];
