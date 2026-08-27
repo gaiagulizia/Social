@@ -1,0 +1,27 @@
+node_modules/
+.expo/
+dist/
+web-build/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+.DS_Store
+*.pem
+.env
+.env.local
+
+# Expo
+.expo-shared/
+
+# Xcode
+ios/
+android/
+*.xcworkspace
+*.xcuserstate
+
+# Metro
+.metro-health-check*
