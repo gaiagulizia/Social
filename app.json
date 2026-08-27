@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "SocialApp",
+    "slug": "social-app",
+    "scheme": "socialapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tuonome.socialapp",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Consenti l'accesso alla fotocamera per scattare foto e video da pubblicare.",
+        "NSPhotoLibraryUsageDescription": "Consenti l'accesso alla libreria foto per caricare contenuti sul tuo profilo.",
+        "NSMicrophoneUsageDescription": "Consenti l'accesso al microfono per registrare video."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.tuonome.socialapp",
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": ["expo-router"]
+  }
+}
