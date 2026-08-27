@@ -1,0 +1,51 @@
+export type PostMediaType = "text" | "image" | "video";
+
+export interface Post {
+  id: string;
+  authorId: string;
+  type: PostMediaType;
+  content: string; // testo del post, oppure caption per foto/video
+  mediaUri?: string; // uri locale/remoto di foto o video
+  sectionId: string | null; // sezione del profilo a cui appartiene (null = nessuna sezione)
+  createdAt: number;
+  likes: number;
+  liked: boolean;
+  comments: number;
+  archived: boolean;
+}
+
+export interface ProfileSection {
+  id: string;
+  name: string; // max 15 caratteri
+  tagTextColor: "#FFFFFF" | "#000000"; // bianco o nero
+  tagBgColor: string; // hex, scelto da ruota RGB o input hex
+  order: number;
+}
+
+export interface UserProfile {
+  id: string;
+  username: string;
+  displayName: string;
+  avatarUri: string;
+  bio: string; // max 300 caratteri
+  followers: number;
+  following: number;
+  sections: ProfileSection[]; // max 10
+}
+
+export interface Message {
+  id: string;
+  conversationId: string;
+  senderId: string;
+  text: string;
+  createdAt: number;
+}
+
+export interface Conversation {
+  id: string;
+  participantName: string;
+  participantAvatar: string;
+  lastMessage: string;
+  lastMessageAt: number;
+  unread: boolean;
+}
